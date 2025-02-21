@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+}
+
+.floating {
+  animation-name: floating;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.title-animation {
+  letter-spacing: 8px;
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  animation-delay: 1s;
+}
+
+.bg-gradient {
+  background-image: linear-gradient(180deg, #b090f4 32%, #7d1dde);
+}
+
+.swap-bg {
+  background: rgb(160, 5, 93);
+  background: linear-gradient(
+    90deg,
+    rgba(160, 5, 93, 1) 45%,
+    rgba(32, 0, 82, 1) 58%
+  );
+}
+
+.glassmorphism {
+  background: rgba(204, 181, 223, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 24px;
+  padding: 15px;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    letter-spacing: 8px;
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: 2px;
+  }
+}
